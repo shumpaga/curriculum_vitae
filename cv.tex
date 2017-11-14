@@ -1,0 +1,95 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75]{geometry}
+\usepackage{import}
+\usepackage{fontawesome}
+\usepackage{footmisc}
+
+\name{A\textcolor{gray}{lexandre}}{G\textcolor{gray}{baguidi} A\textcolor{gray}{ïsse}}
+\title{CV}
+\address{02 Place Aurélie Nemours, 75013, Paris, France}{}{}
+\phone[mobile]{+33 781964147}
+\email{aga@lrde.epita.fr}
+\homepage{shumpaga.com}
+\social[linkedin]{alexandregbaguidiaisse}
+\social[github]{shumpaga}
+
+\usepackage{background}
+\usepackage{color}
+\usetikzlibrary{calc}
+\newsavebox\mybox
+\sbox\mybox{%
+\begin{tikzpicture}[remember picture]
+    \fill[cyan] (current page.north west) rectangle ($(current page.south west) +(10mm,0)$);
+\end{tikzpicture}%
+}
+\backgroundsetup{
+angle=0,
+scale=1,
+opacity=1,
+color=black,
+contents={%
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=west] at  (current page.west) {\usebox{\mybox}};
+\end{tikzpicture}%
+}
+}
+
+\begin{document}
+\makecvtitle
+\vspace{-1cm}
+\begin{center}
+CS student researcher | Looking for my \textbf{6 months} end-of-studies \textbf{internship} starting in \textbf{Feb 2018}.
+\end{center}
+
+\section{Education}
+\begin{itemize}
+\setlength\itemsep{0.6em}
+\item{\cventry{Sep 2013 -- to date}{Graduate school of Computer Science}{EPITA}{Paris, France} {\textit{Engineering degree}}{}}
+\item{\cventry{Jan 2015 -- Mai 2015}{Real-time and embedded systems}{Staffordshire University}{Stafford, England} {\textit{Semester abroad}}{}}
+\end{itemize}
+
+\section{Experience}
+\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking.}
+\begin{itemize}
+\item{\cventry{Sep 2016 -- to date}{Intern and then, Student researcher}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{3pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas. In preparation for a publication (Jan 2018).}}
+
+\vspace{2pt}
+
+\item{\cventry{Aug 2016}{Teaching assistant}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{3pt}A team of 4 assistants helping students to quickly master all programming notions (Python) being seen in a Big Data course.}}
+
+\end{itemize}
+
+\section{Some programming projects}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\textbf{Python:} & Multiple barcode recognition on an image (using OpenCV).\\
+\textbf{Scala:} & 'Tron' AI implementation: reached the 107th place over 4000 players worldwide.\\
+\textbf{C++:} & Real-time CUDA Raytracer.\\
+&A spell checker based on a patricia trie with 3000 qps/core and 512 Mo as constraints.\\
+\textbf{C:} & POSIX-compliant shell based on the SCL.\\
+&Memory allocation library.\\
+&Optical character recognition software.
+\end{tabular}
+
+\section{Skills}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\textbf{Languages:} & French (Native), Russian (Native), English (TOEIC 850)\\
+\textbf{Programming:} & C, C++, Python, MATLAB, C\#, Scala, PostgreSQL, Java.\\
+\textbf{OS:} & Linux / UNIX, Mac Os X, Windows.\\
+\textbf{Interests:} & Audio recording, mix, master, computer-aided music, travels, event planning.
+\end{tabular}
+
+\end{document}
