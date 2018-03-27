@@ -9,7 +9,7 @@
 \moderncvstyle{banking}
 \moderncvcolor{blue}
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.75]{geometry}
+\usepackage[scale=0.75, margin=0.8in]{geometry}
 \usepackage{import}
 \usepackage{fontawesome}
 \usepackage{footmisc}
@@ -17,7 +17,7 @@
 \name{A\textcolor{gray}{lexandre}}{G\textcolor{gray}{baguidi} A\textcolor{gray}{ïsse}}
 \title{CV}
 \address{02 Place Aurélie Nemours, 75013, Paris, France}{}{}
-\phone[mobile]{+33 781964147}
+\phone[mobile]{+33 642426980}
 \email{aga@lrde.epita.fr}
 \homepage{shumpaga.com}
 \social[linkedin]{alexandregbaguidiaisse}
@@ -48,20 +48,24 @@ contents={%
 \makecvtitle
 \vspace{-1cm}
 \begin{center}
-CS student researcher | Looking for my \textbf{6 months} end-of-studies \textbf{internship} starting in \textbf{Feb 2018}.
+Software Engineer (graduating this year) | Looking for a \textbf{job opportunity} starting in \textbf{Sep-Oct 2018}
 \end{center}
 
 \section{Education}
 \begin{itemize}
 \setlength\itemsep{0.6em}
-\item{\cventry{Sep 2013 -- to date}{Graduate school of Computer Science}{EPITA}{Paris, France} {\textit{Engineering degree}}{}}
+\item{\cventry{Sep 2013 -- Sep 2018}{Graduate school of Computer Science}{EPITA}{Paris, France} {\textit{Engineering degree}}{}}
 \item{\cventry{Jan 2015 -- Mai 2015}{Real-time and embedded systems}{Staffordshire University}{Stafford, England} {\textit{Semester abroad}}{}}
 \end{itemize}
 
 \section{Experience}
-\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking.}
+\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking: \url{spot.lrde.epita.fr}}.
 \begin{itemize}
-\item{\cventry{Sep 2016 -- to date}{Intern and then, Student researcher}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{3pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas. In preparation for a publication (Jan 2018).}}
+\item{\cventry{Feb 2018 - Aug 2018}{Sofware engineer intern (end-of-studies internship)}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{3pt}Currently working on automatic approximation of laser scan location in 3D point cloud. Will work on point cloud data compression.}}
+
+\vspace{2pt}
+
+\item{\cventry{Sep 2016 -- Jan 2018}{Intern and then, Student researcher}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{3pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas.}}
 
 \vspace{2pt}
 
@@ -73,13 +77,15 @@ CS student researcher | Looking for my \textbf{6 months} end-of-studies \textbf{
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ll}
-\textbf{Python:} & Multiple barcode recognition on an image (using OpenCV).\\
+\textbf{Python:} & Multiple barcode recognition on a picture (using OpenCV).\\
+& Personal blog \url{shumpaga.com} (using Django).\\
 \textbf{Scala:} & 'Tron' AI implementation: reached the 107th place over 4000 players worldwide.\\
-\textbf{C++:} & Real-time CUDA Raytracer.\\
-&A spell checker based on a patricia trie with 3000 qps/core and 512 Mo as constraints.\\
+\textbf{C++:} & Distributed memory allocator with vector clocks for causal ordering of events (using OpenMPI).\\
+& Real-time CUDA Raytracer.\\
+& A spell checker based on a patricia trie with 3000 qps/core and 512 Mo as constraints.\\
 \textbf{C:} & POSIX-compliant shell based on the SCL.\\
-&Memory allocation library.\\
-&Optical character recognition software.
+& Implementation of malloc, realloc, calloc and free with a first fit algorithm.\\
+& Basic optical character recognition software with feedforward neural network.\\
 \end{tabular}
 
 \section{Skills}
