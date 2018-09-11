@@ -43,35 +43,45 @@ contents={%
 \end{tikzpicture}%
 }
 }
+\usepackage{amsmath}
+\newcommand{\CC }{\emph{ContextCapture$^{\text{\textbf{TM}}}$ }}
+\usepackage{enumitem}
+\definecolor{cusblue}{rgb}{0.0, 0.4, 0.6}
 
 \begin{document}
 \makecvtitle
 \vspace{-1cm}
 \begin{center}
-Software Engineer (graduating this year) | Looking for a \textbf{job opportunity} starting in \textbf{Sep-Oct 2018}
+  Software Engineer at \textbf{Acute3D | Bentley Systems}
 \end{center}
+
+\section{Experience}
+\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking: \url{spot.lrde.epita.fr}.}
+\begin{itemize}
+\item{
+    \cventry{Sep 2018 - to date}{\textcolor{cusblue}{Sofware Engineer}}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{-2.8pt}
+      Currently working on \CC cloud services: scheduler, multithreading.
+    }
+    \vspace{-0.7cm}
+    \cventry{Feb 2018 - Aug 2018}{\textcolor{cusblue}{End-of-studies internship}}{}{}{}{\vspace{-2.8pt}
+      Improve \CC point cloud support by implementing: an \textbf{algorithm which retrieves all scanners positions} of any static point cloud and a \textbf{visibility algorithm} which tells for each point which scanner \textbf{best sees} it. Both algorithms are under \textbf{ongoing patents}.
+    }
+  }
+
+\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Student researcher}}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{-2.8pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas.}}
+
+\item{\cventry{Aug 2016}{\textcolor{cusblue}{Teaching assistant}}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{-2.8pt}A team of 4 assistants helping students to quickly master all programming notions (Python) being seen in a Big Data course.}}
+
+\end{itemize}
+
 
 \section{Education}
 \begin{itemize}
-\setlength\itemsep{0.6em}
+\setlength\itemsep{-0.2cm}
 \item{\cventry{Sep 2013 -- Sep 2018}{Graduate school of Computer Science}{EPITA}{Paris, France} {\textit{Engineering degree}}{}}
 \item{\cventry{Jan 2015 -- Mai 2015}{Real-time and embedded systems}{Staffordshire University}{Stafford, England} {\textit{Semester abroad}}{}}
 \end{itemize}
 
-\section{Experience}
-\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking: \url{spot.lrde.epita.fr}}.
-\begin{itemize}
-\item{\cventry{Feb 2018 - Aug 2018}{Sofware engineer intern (end-of-studies internship)}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{3pt}Currently working on automatic approximation of laser scan location in 3D point cloud. Will work on point cloud data compression.}}
-
-\vspace{2pt}
-
-\item{\cventry{Sep 2016 -- Jan 2018}{Intern and then, Student researcher}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{3pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas.}}
-
-\vspace{2pt}
-
-\item{\cventry{Aug 2016}{Teaching assistant}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{3pt}A team of 4 assistants helping students to quickly master all programming notions (Python) being seen in a Big Data course.}}
-
-\end{itemize}
 
 \section{Some programming projects}
 \setlength{\tabcolsep}{3pt}
