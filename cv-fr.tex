@@ -1,0 +1,111 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.75, margin=0.8in]{geometry}
+\usepackage{import}
+\usepackage{fontawesome}
+\usepackage{footmisc}
+
+\name{A\textcolor{gray}{lexandre}}{G\textcolor{gray}{baguidi} A\textcolor{gray}{ïsse}}
+\title{CV}
+\address{02 Place Aurélie Nemours, 75013, Paris, France}{}{}
+\phone[mobile]{+33 642426980}
+\email{aga@lrde.epita.fr}
+\homepage{shumpaga.com}
+\social[linkedin]{alexandregbaguidiaisse}
+\social[github]{shumpaga}
+
+\usepackage{background}
+\usepackage{color}
+\usetikzlibrary{calc}
+\newsavebox\mybox
+\sbox\mybox{%
+\begin{tikzpicture}[remember picture]
+    \fill[cyan] (current page.north west) rectangle ($(current page.south west) +(10mm,0)$);
+\end{tikzpicture}%
+}
+\backgroundsetup{
+angle=0,
+scale=1,
+opacity=1,
+color=black,
+contents={%
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=west] at  (current page.west) {\usebox{\mybox}};
+\end{tikzpicture}%
+}
+}
+\usepackage{amsmath}
+\newcommand{\CC }{\emph{ContextCapture$^{\text{\textbf{TM}}}$ }}
+\usepackage{enumitem}
+\definecolor{cusblue}{rgb}{0.0, 0.4, 0.6}
+
+\begin{document}
+\makecvtitle
+\vspace{-1cm}
+\begin{center}
+  Ingénieur logiciel à \textbf{Acute3D | Bentley Systems}
+\end{center}
+
+\section{Experience}
+\footnotetext[1]{Spot est une bibliothèque C++14 de vérification formelle par $\omega$-automates et formules LTL: \url{spot.lrde.epita.fr}.}
+\begin{itemize}
+\item{
+    \cventry{Sep 2018 - Aujourd'hui}{\textcolor{cusblue}{Ingénieur logiciel}}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{-2.8pt}
+      Travaille actuellement sur la parallélisation des tâches dans \CC: scheduler, multithreading.
+    }
+    \vspace{-0.7cm}
+    \cventry{Feb 2018 - Aug 2018}{\textcolor{cusblue}{Stage de fin d'étude}}{}{}{}{\vspace{-2.8pt}
+      Amélioration du support de nuage de point dans \CC: un algorithme de \textbf{localisation de tous les scanners} d'un nuage de point statique et un algorithme de \textbf{visibilité} qui attribue à chaque point le scanner qui le voit le mieux. Ces deux algorithmes sont en cours de \textbf{brevetage}.
+    }
+  }
+
+\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Etudiant chercheur}}{LRDE (Laboratoire de Recherche et Développement de l'EPITA)}{Paris, France}{}{\vspace{-2.8pt}Plusieurs contributions sur Spot\footnotemark[1]: Optimisation d'un algorithme de minimisation d'$\omega$-automates utilisant un solveur de statisfaisabilité booléenne, conversion des classes communes d'$\omega$-automates en automates de co-Büchi et enfin, vérification de la propriété de ``persistence'' sur les Formules LTL.}}
+
+\item{\cventry{Aug 2016}{\textcolor{cusblue}{Assistant de l'enseignant}}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{-2.8pt}Une équipe de 4 assistants aidant les étudiants à rapidement prendre en main les notions de programmation (Python) enseignées dans un cours de Big Data.}}
+
+\end{itemize}
+
+
+\section{Education}
+\begin{itemize}
+\setlength\itemsep{-0.2cm}
+\item{\cventry{Sep 2013 -- Sep 2018}{Ingénieurie et Science Informatique}{EPITA}{Paris, France} {\textit{Diplôme d'ingénieur}}{}}
+\item{\cventry{Jan 2015 -- Mai 2015}{Temps réel et systèmes embarqués}{Staffordshire University}{Stafford, England} {\textit{Semestre à l'étranger}}{}}
+\end{itemize}
+
+
+\section{Quelques projets de programmation:}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+  \textbf{Python:} & Détection de multiples code barre dans une image (using OpenCV).\\
+& Blog personnel: \url{shumpaga.com} (module Django).\\
+\textbf{Scala:} & Implémentation d'une IA 'Tron': 107ème place sur 4000 participants mondiaux.\\
+  \textbf{C++:} & Allocateur de mémoire distribué avec ordonnancement causal des évènements (OpenMPI).\\
+& Raytracer temps réel CUDA.\\
+& Vérificateur d'orthographe basé sur un arbre PATRICIA, contrainte de 3000 qps/core et 512 Mo.\\
+\textbf{C:} & Un shell POSIX-compliant basé sur la SCL.\\
+& Implémentation de malloc, realloc, calloc et free avec la méthode de 'first fit'.\\
+& Logiciel de reconnaissance optique de caractère utilisant un réseau neuronnal prédictif.\\
+\end{tabular}
+
+\section{Compétences}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{ll}
+\textbf{Languages:} & Français (Natif), Russe (Natif), Anglais (TOEIC 850)\\
+\textbf{Programmation:} & C, C++, Python, MATLAB, C\#, Scala, PostgreSQL, Java.\\
+\textbf{OS:} & Linux / UNIX, Mac Os X, Windows.\\
+\textbf{Intérêts:} & Enregistrement audio, mix, master, musique assistée par ordinateur, voyages, évènementiel.
+\end{tabular}
+
+\end{document}
