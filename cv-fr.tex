@@ -13,14 +13,36 @@
 \usepackage{import}
 \usepackage{fontawesome}
 \usepackage{footmisc}
+\usepackage{dirtytalk}
 
-\name{A\textcolor{gray}{lexandre}}{G\textcolor{gray}{baguidi} A\textcolor{gray}{ïsse}}
+\usepackage[sorting=ydnt]{biblatex}
+\addbibresource{cite.bib}
+
+\renewcommand*{\cventry}[7][.25em]{
+  \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}%
+    % skip the company name and location line if both are empty, allowing one to show multiple roles within the same company without repeating it
+    \ifboolexpr{%
+      test {\ifstrempty{#4}}
+      and
+      test {\ifstrempty{#5}}}%
+      {}%
+      {{\bfseries #4} & {\bfseries #5}\\}%
+    {\itshape #3\ifstrempty{#6}{}{\hspace{1cm} #6}} & {\itshape #2}\\%
+  \end{tabular*}%
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\name{\textcolor{color1}{A}\textcolor{gray}{lexandre}}{\textcolor{color1}{G}\textcolor{gray}{baguidi} \textcolor{color1}{A}\textcolor{gray}{ïsse}}
 \title{CV}
-\address{02 Place Aurélie Nemours, 75013, Paris, France}{}{}
+\address{22 Rue de la République, 92150 Suresnes, France}{}{}
 \phone[mobile]{+33 642426980}
-\email{aga@lrde.epita.fr}
-\homepage{shumpaga.com}
-\social[linkedin]{alexandregbaguidiaisse}
+\email{a.gbaguidiaisse@gmail.com}
+% \homepage{agbaguidiaisse.com}
+\social[linkedin]{agbaguidiaisse}
 \social[github]{shumpaga}
 
 \usepackage{background}
@@ -29,7 +51,7 @@
 \newsavebox\mybox
 \sbox\mybox{%
 \begin{tikzpicture}[remember picture]
-    \fill[cyan] (current page.north west) rectangle ($(current page.south west) +(10mm,0)$);
+    \fill[color1] (current page.north west) rectangle ($(current page.south west) +(1mm,0)$);
 \end{tikzpicture}%
 }
 \backgroundsetup{
@@ -43,8 +65,11 @@ contents={%
 \end{tikzpicture}%
 }
 }
+
 \usepackage{amsmath}
-\newcommand{\CC }{\emph{ContextCapture$^{\text{\textbf{TM}}}$ }}
+\newcommand{\CC }{\emph{ContextCapture}}
+\newcommand{\CCMark }{\CC\footnotemark[1] }
+\newcommand{\omg}{$\omega$-automata }
 \usepackage{enumitem}
 \definecolor{cusblue}{rgb}{0.0, 0.4, 0.6}
 
@@ -52,25 +77,55 @@ contents={%
 \makecvtitle
 \vspace{-1cm}
 \begin{center}
-  Ingénieur logiciel à \textbf{Acute3D | Bentley Systems}
+  A la recherche d'un \textbf{sujet de thèse en informatique}.
 \end{center}
 
-\section{Experience}
-\footnotetext[1]{Spot est une bibliothèque C++14 de vérification formelle par $\omega$-automates et formules LTL: \url{spot.lrde.epita.fr}.}
+\section{Profile}
+J'ai choisi la recherche informatique comme spécialité durant mes études à l'EPITA.
+Cela a joué un rôle clé dans mon travail chez Bentley Systems, m'enmenant à lire des papiers,
+réimplémenter des algorithmes et déposer
+\textbf{deux brevets d'invention}~\cite{patent.scanfinder1,patent.scanfinder2}.
+Ayant compris que j'ai une forte passion pour la recherche, je souhaite faire un doctorat.
+J'ai eu des expériences en:
+\textbf{Vision par Ordinateur, Reconstruction 3D, Nuages de points, Optimization, Théorie des graphes,
+Machines à Etats-Finis, Traitement de données, services web}.
+
+\section{Experiences}
+\footnotetext[1]{\CC\ est un logiciel de Reconstruction 3D à partir d'images ou de nuages de points décrivant une scène.}
+\footnotetext[2]{Spot est une bibliothèque C++14 de manipulation de formules LTL, machines à états-finis et vérification formelle : \url{spot.lrde.epita.fr}.}
 \begin{itemize}
+
 \item{
-    \cventry{Sep 2018 - Aujourd'hui}{\textcolor{cusblue}{Ingénieur logiciel}}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{-2.8pt}
-      Travaille actuellement sur la parallélisation des tâches dans \CC: scheduler, multithreading.
-    }
-    \vspace{-0.7cm}
-    \cventry{Feb 2018 - Aug 2018}{\textcolor{cusblue}{Stage de fin d'étude}}{}{}{}{\vspace{-2.8pt}
-      Amélioration du support de nuage de point dans \CC: un algorithme de \textbf{localisation de tous les scanners} d'un nuage de point statique et un algorithme de \textbf{visibilité} qui attribue à chaque point le scanner qui le voit le mieux. Ces deux algorithmes sont en cours de \textbf{brevetage}.
-    }
+  \cventry{Sep 2018 - auj.}{\textcolor{cusblue}{Ingénieur Logiciel}}{Bentley Systems -- Equipe "Reality Modeling"}{Paris, France}{\hspace{0.2cm}{\footnotesize Vision par ordinateur, Reconstruction 3D, Géométrie}}{}
+  \vspace{-0.3cm}
+  \cventry{Fev 2018 - Août 2018}{\textcolor{cusblue}{Stage ingénieur}}{}{}{\hspace{0cm}{\footnotesize Théorie des Graphes, Optimization, C++, Python, R, SQL}}{
+    \vspace{0.1cm}
+    Amélioration du logiciel \CCMark et son service cloud avec:
+    \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+      \item Amélioration du support des nuages de point~\cite{techreport.contextcapture}:
+        \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+          \item Un algorithme qui retrouve la position de tous les scanners d'un nuage de point multiple~\cite{patent.scanfinder1},
+          \item Un algorithme qui détermine pour chaque point, le scanner l'ayant généré~\cite{patent.scanfinder2}.
+          \item Différentes approches pour diminuer la sensibilité aux bruits des nuages de points.
+        \end{itemize}
+      \item Réécriture complète du méchanisme de jobs / tâches du logiciel sous forme de graphes de dépendances.
+      \item Abstraction et convergence des des architectures (Desktop et Cloud).
+    \end{itemize}
   }
+}
 
-\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Etudiant chercheur}}{LRDE (Laboratoire de Recherche et Développement de l'EPITA)}{Paris, France}{}{\vspace{-2.8pt}Plusieurs contributions sur Spot\footnotemark[1]: Optimisation d'un algorithme de minimisation d'$\omega$-automates utilisant un solveur de statisfaisabilité booléenne, conversion des classes communes d'$\omega$-automates en automates de co-Büchi et enfin, vérification de la propriété de ``persistence'' sur les Formules LTL.}}
-
-\item{\cventry{Aug 2016}{\textcolor{cusblue}{Assistant de l'enseignant}}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{-2.8pt}Une équipe de 4 assistants aidant les étudiants à rapidement prendre en main les notions de programmation (Python) enseignées dans un cours de Big Data.}}
+\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Etudiant chercheur}}{LRDE (Laboratoire de Recherche et Développement de l'EPITA)}{Paris, France}{{\footnotesize Machines à états-finis, Théorie des Graphes, Vérification formelle}}{
+  \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+    \item Différentes contributions de code à Spot\footnotemark[2]:
+      \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+        \item Amélioration d'un algorithme de minimisation de graphe en testant une approche incrémentale~\cite{techreport.minimization}
+        \item Support des automates de co-B\"uchi (une classe de machines à états-finis avec des mots infinis)
+        \item Test de persistence et de récurrence sur des formules LTL en utilisant les automates de co-B\"uchi
+      \end{itemize}
+    \item TD : Cours pratiques pour aider les étudiants à maîtriser les notions vues en cours 
+  \end{itemize}
+  }
+}
 
 \end{itemize}
 
@@ -78,34 +133,21 @@ contents={%
 \section{Education}
 \begin{itemize}
 \setlength\itemsep{-0.2cm}
-\item{\cventry{Sep 2013 -- Sep 2018}{Ingénieurie et Science Informatique}{EPITA}{Paris, France} {\textit{Diplôme d'ingénieur}}{}}
-\item{\cventry{Jan 2015 -- Mai 2015}{Temps réel et systèmes embarqués}{Staffordshire University}{Stafford, England} {\textit{Semestre à l'étranger}}{}}
+\item{\cventry{Sep 2013 -- Sep 2018}{Ingénieur en informatique}{EPITA -- Spécialisation en Recherche Informatique}{Paris, France}{}{}}
+\item{\cventry{Jan 2015 -- Mai 2015}{Cours de Systèmes temps-réel embarqués}{Staffordshire University -- Semestre à l'étranger}{Stafford, England} {}{}}
 \end{itemize}
-
-
-\section{Quelques projets de programmation:}
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ll}
-  \textbf{Python:} & Détection de multiples code barre dans une image (using OpenCV).\\
-& Blog personnel: \url{shumpaga.com} (module Django).\\
-\textbf{Scala:} & Implémentation d'une IA 'Tron': 107ème place sur 4000 participants mondiaux.\\
-  \textbf{C++:} & Allocateur de mémoire distribué avec ordonnancement causal des évènements (OpenMPI).\\
-& Raytracer temps réel CUDA.\\
-& Vérificateur d'orthographe basé sur un arbre PATRICIA, contrainte de 3000 qps/core et 512 Mo.\\
-\textbf{C:} & Un shell POSIX-compliant basé sur la SCL.\\
-& Implémentation de malloc, realloc, calloc et free avec la méthode de 'first fit'.\\
-& Logiciel de reconnaissance optique de caractère utilisant un réseau neuronnal prédictif.\\
-\end{tabular}
 
 \section{Compétences}
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ll}
-\textbf{Languages:} & Français (Natif), Russe (Natif), Anglais (TOEIC 850)\\
-\textbf{Programmation:} & C, C++, Python, MATLAB, C\#, Scala, PostgreSQL, Java.\\
+\textbf{Linguistiques:} & Français (Natif), Russe (Natif), Anglais\\
+\textbf{Informatique:} & C, C++, C\#, Python, R, Javascript, React, NodeJS, Scala, Java, PostgreSQL, SQLite.\\
 \textbf{OS:} & Linux / UNIX, Mac Os X, Windows.\\
-\textbf{Intérêts:} & Enregistrement audio, mix, master, musique assistée par ordinateur, voyages, évènementiel.
+\textbf{Autres Intérêts:} & Education, Enregistrement et traitement Audio (Mix, master), voyages.
 \end{tabular}
+
+\printbibliography[type=patent,title={Brevets déposés}]
+\printbibliography[type=report,title={Rapports écrits}]
 
 \end{document}

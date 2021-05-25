@@ -13,14 +13,36 @@
 \usepackage{import}
 \usepackage{fontawesome}
 \usepackage{footmisc}
+\usepackage{dirtytalk}
 
-\name{A\textcolor{gray}{lexandre}}{G\textcolor{gray}{baguidi} A\textcolor{gray}{ïsse}}
+\usepackage[sorting=ydnt]{biblatex}
+\addbibresource{cite.bib}
+
+\renewcommand*{\cventry}[7][.25em]{
+  \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}%
+    % skip the company name and location line if both are empty, allowing one to show multiple roles within the same company without repeating it
+    \ifboolexpr{%
+      test {\ifstrempty{#4}}
+      and
+      test {\ifstrempty{#5}}}%
+      {}%
+      {{\bfseries #4} & {\bfseries #5}\\}%
+    {\itshape #3\ifstrempty{#6}{}{\hspace{1cm} #6}} & {\itshape #2}\\%
+  \end{tabular*}%
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\name{\textcolor{color1}{A}\textcolor{gray}{lexandre}}{\textcolor{color1}{G}\textcolor{gray}{baguidi} \textcolor{color1}{A}\textcolor{gray}{ïsse}}
 \title{CV}
-\address{02 Place Aurélie Nemours, 75013, Paris, France}{}{}
+\address{22 Rue de la République, 92150 Suresnes, France}{}{}
 \phone[mobile]{+33 642426980}
-\email{aga@lrde.epita.fr}
-\homepage{shumpaga.com}
-\social[linkedin]{alexandregbaguidiaisse}
+\email{a.gbaguidiaisse@gmail.com}
+% \homepage{agbaguidiaisse.com}
+\social[linkedin]{agbaguidiaisse}
 \social[github]{shumpaga}
 
 \usepackage{background}
@@ -29,7 +51,7 @@
 \newsavebox\mybox
 \sbox\mybox{%
 \begin{tikzpicture}[remember picture]
-    \fill[cyan] (current page.north west) rectangle ($(current page.south west) +(10mm,0)$);
+    \fill[color1] (current page.north west) rectangle ($(current page.south west) +(1mm,0)$);
 \end{tikzpicture}%
 }
 \backgroundsetup{
@@ -43,8 +65,11 @@ contents={%
 \end{tikzpicture}%
 }
 }
+
 \usepackage{amsmath}
-\newcommand{\CC }{\emph{ContextCapture$^{\text{\textbf{TM}}}$ }}
+\newcommand{\CC }{\emph{ContextCapture}}
+\newcommand{\CCMark }{\CC\footnotemark[1] }
+\newcommand{\omg}{$\omega$-automata\footnotemark[3] }
 \usepackage{enumitem}
 \definecolor{cusblue}{rgb}{0.0, 0.4, 0.6}
 
@@ -52,25 +77,74 @@ contents={%
 \makecvtitle
 \vspace{-1cm}
 \begin{center}
-  Software Engineer at \textbf{Acute3D | Bentley Systems}
+  Looking for a \textbf{Computer Thesis Subject}
 \end{center}
 
-\section{Experience}
-\footnotetext[1]{Spot is a C++14 library for LTL, $\omega$-automata manipulation and model checking: \url{spot.lrde.epita.fr}.}
+\section{Profile}
+I have been introduced to academic research during my \textbf{Research} specialization at EPITA.
+It played a key role in my work at Bentley Systems leading me to submit \textbf{two patents}~\cite{patent.scanfinder1,patent.scanfinder2}. After two years as a
+Software Engineer, I understood that I have a strong passion for research and I want to do a PhD.
+I have had some experiences in: \textbf{3D Reconstruction, Point Clouds, Graph Theory, Finite-State Machine, Data, Cloud Computing}.
+
+\section{Experiences}
+\footnotetext[1]{\CC\ is a 3D Reconstruction Software which turns point clouds and/or images into realistic 3D Models.}
+\footnotetext[2]{Spot is a C++14 library for LTL, \omg manipulation and model checking: \url{spot.lrde.epita.fr}.}
+\footnotetext[3]{A variation of finite-state automata which runs on infinite, rather than finite, strings as input.}
+\footnotetext[4]{Linear Temporal Logic : used to express time-aware conditions. Used in model checking.}
 \begin{itemize}
+
+%\item{
+%  \cventry{May 2020 - to date}{\textcolor{cusblue}{IT Manager}}{ESGC VAK -- Graduate School of Civil Engineering}{Cotonou, Benin}{\hspace{0.2cm}{\footnotesize e-learning (LMS), React, Node.js, Javascript}}{
+%    \vspace{0.1cm}
+%    Outside \say{Bentley Systems} working hours, I started to work for this school :
+%    \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+%      \item Redesigning the official website + Developping a customized e-learning platform (in progress): \url{esgcvak.com}.
+%      \item Setting up a private video communication platform for courses : \url{esgcvak-online.com} (using BigBlueButton).
+%      \item Computerize all school processes : \url{https://vak.easylmd.com/vak/web/login/} (using EasyLMD).
+%      \item Setting up a private storage system : \url{cloud.esgcvak-online.com} (using NextCloud)
+%    \end{itemize}
+%  }
+%}
+%\item{\cventry{Jun 2018 -- to date}{\textcolor{cusblue}{Founder | Freelance developper}}{SmartXP}{Paris, France}{{\footnotesize Node.js, React, Javascript, UI/UX, IHM}}{
+%  Freelancer on different client projects, for instance : complete redesign of a school website + implementation (from scratch) of a \textbf{private web eLearning platform} \url{esgcvak.com}:
+%    \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+%      \item Admins : configure everything and manage users
+%      \item Professors : construct courses (PDF, videos, Text Editor, MCQ), respond to students and \textbf{monitor} their engagement
+%      \item Students : Follow courses
+%    \end{itemize}
+%  }
+%}
+
 \item{
-    \cventry{Sep 2018 - to date}{\textcolor{cusblue}{Sofware Engineer}}{Bentley Systems -- Reality Modeling}{Paris, France}{}{\vspace{-2.8pt}
-      Currently working on \CC cloud services: scheduler, multithreading.
-    }
-    \vspace{-0.7cm}
-    \cventry{Feb 2018 - Aug 2018}{\textcolor{cusblue}{End-of-studies internship}}{}{}{}{\vspace{-2.8pt}
-      Improve \CC point cloud support by implementing: an \textbf{algorithm which retrieves all scanners positions} of any static point cloud and a \textbf{visibility algorithm} which tells for each point which scanner \textbf{best sees} it. Both algorithms are under \textbf{ongoing patents}.
-    }
+  \cventry{Sep 2018 - to date}{\textcolor{cusblue}{Software Engineer}}{Bentley Systems -- Reality Modeling Team}{Paris, France}{\hspace{0.3cm}{\footnotesize 3D Reconstruction, Point Clouds, Geometry, Graph Theory}}{}
+  \vspace{-0.3cm}
+  \cventry{Feb 2018 - Aug 2018}{\textcolor{cusblue}{End-of-studies internship}}{}{}{\hspace{2.5cm}{\footnotesize Optimization, C++, Python, R, SQL, React}}{
+    \vspace{0.1cm}
+    Improving \CCMark software and its cloud service :
+    \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+      \item Better point cloud support~\cite{techreport.contextcapture} with :
+        \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+          \item An algorithm that determines one or more scanner positions in a point cloud~\cite{patent.scanfinder1},
+          \item An algorithm that estimates which scanner created each point~\cite{patent.scanfinder2}.
+        \end{itemize}
+      \item Complete rewrite of the Job/Task graph mechanism, performance measures.
+      \item Abstract and converge Cloud/Desktop architectures.
+    \end{itemize}
   }
+}
 
-\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Student researcher}}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{}{\vspace{-2.8pt}Various contributions to Spot\footnotemark[1]: Optimization of $\omega$-automata minimization using Boolean satisfiability (SAT) solvers, conversion of common $\omega$-automata classes into co-Büchi automata and checking ``persistence'' properties on LTL formulas.}}
-
-\item{\cventry{Aug 2016}{\textcolor{cusblue}{Teaching assistant}}{Ecole polytechnique -- HEC}{Paris, France}{}{\vspace{-2.8pt}A team of 4 assistants helping students to quickly master all programming notions (Python) being seen in a Big Data course.}}
+\item{\cventry{Sep 2016 -- Jan 2018}{\textcolor{cusblue}{Student Researcher}}{LRDE (Research and Development Laboratory of EPITA)}{Paris, France}{{\footnotesize Finite-State Machine, Graph Theory, Model Checking}}{
+  \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+    \item Various contributions to Spot\footnotemark[2]:
+      \begin{itemize}[noitemsep,topsep=0.05cm,itemsep=0.05cm]
+        \item Improve a SAT-based (Boolean satisfiability) graph minimization algorithm using an incremental approach~\cite{techreport.minimization}
+        \item Add co-B\"uchi automata support and conversions from other common classes to co-B\"uchi~\cite{techreport.lrde.17}
+        \item Add Persistence/Recurrence membership testing of LTL\footnotemark[4] formul\ae\ using co-B\"uchi automata
+      \end{itemize}
+    \item Turorials : help students to quickly master programming notions being seen in lectures.
+  \end{itemize}
+  }
+}
 
 \end{itemize}
 
@@ -78,34 +152,21 @@ contents={%
 \section{Education}
 \begin{itemize}
 \setlength\itemsep{-0.2cm}
-\item{\cventry{Sep 2013 -- Sep 2018}{Graduate school of Computer Science}{EPITA}{Paris, France} {\textit{Engineering degree}}{}}
-\item{\cventry{Jan 2015 -- Mai 2015}{Real-time and embedded systems}{Staffordshire University}{Stafford, England} {\textit{Semester abroad}}{}}
+\item{\cventry{Sep 2013 -- Sep 2018}{Graduate school of Engineering and Computer Science}{EPITA -- Computer Science Research Specialization}{Paris, France}{}{}}
+\item{\cventry{Jan 2015 -- Mai 2015}{Real-time and embedded systems}{Staffordshire University -- Semester Abroad}{Stafford, England} {}{}}
 \end{itemize}
-
-
-\section{Some programming projects}
-\setlength{\tabcolsep}{3pt}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{ll}
-\textbf{Python:} & Multiple barcode recognition on a picture (using OpenCV).\\
-& Personal blog \url{shumpaga.com} (using Django).\\
-\textbf{Scala:} & 'Tron' AI implementation: reached the 107th place over 4000 players worldwide.\\
-\textbf{C++:} & Distributed memory allocator with vector clocks for causal ordering of events (using OpenMPI).\\
-& Real-time CUDA Raytracer.\\
-& A spell checker based on a patricia trie with 3000 qps/core and 512 Mo as constraints.\\
-\textbf{C:} & POSIX-compliant shell based on the SCL.\\
-& Implementation of malloc, realloc, calloc and free with a first fit algorithm.\\
-& Basic optical character recognition software with feedforward neural network.\\
-\end{tabular}
 
 \section{Skills}
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ll}
 \textbf{Languages:} & French (Native), Russian (Native), English (TOEIC 850)\\
-\textbf{Programming:} & C, C++, Python, MATLAB, C\#, Scala, PostgreSQL, Java.\\
+\textbf{Programming:} & C, C++, C\#, Python, R, Javascript, React, NodeJS, Scala, Java, PostgreSQL, SQLite.\\
 \textbf{OS:} & Linux / UNIX, Mac Os X, Windows.\\
-\textbf{Interests:} & Audio recording, mix, master, computer-aided music, travels, event planning.
+\textbf{Interests:} & Education, Audio recording, mix, master, computer-aided music, travels, event planning.
 \end{tabular}
+
+\printbibliography[type=patent,title={Submitted Patents}]
+\printbibliography[type=report,title={Internship Reports}]
 
 \end{document}

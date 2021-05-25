@@ -1,0 +1,145 @@
+@patent{patent.scanfinder1,
+  title  = {Determining One Or More Scanner Positions In A Point Cloud},
+  number = {20200371214A1},
+  author = {Novel Cyril, Gbaguidi A\"isse Alexandre},
+  year   = {2020},
+  month  = {11},
+  url    = {https://patents.google.com/patent/US20200371214A1/}
+}
+@patent{patent.scanfinder2,
+  title  = {Assigning each point of a point cloud to a scanner position of a plurality of different scanner positions in a point cloud},
+  number = {Unpublished yet},
+  author = {Novel Cyril, Gbaguidi A\"isse Alexandre}
+}
+
+@techreport{techreport.minimization,
+  author      = {Gbaguidi A\"isse Alexandre},
+  title       = {Implementation of $\omega$-automata Minimization Techniques in Spot, a Model Checking Library},
+  institution = {LRDE},
+  year        = {2017},
+  address     = {Kremlin-Bicêtre, France},
+  month       = {1},
+  note        = {3rd Year Internship Report},
+  url         = {https://github.com/shumpaga/spot-internship-report/blob/master/report.pdf}
+}
+
+@techreport{techreport.contextcapture,
+  author      = {Gbaguidi A\"isse Alexandre},
+  title       = {Improving Point Cloud Support of ContextCapture : ScanFinder, Point Cloud Visibility and Point Cloud Compression},
+  institution = {Bentley Systems},
+  year        = {2018},
+  address     = {Kremlin-Bicêtre, France},
+  month       = {8},
+  note        = {End-Of-Engineering-Cycle Internship Report},
+  url         = {https://github.com/shumpaga/end-of-studies-internship-report/blob/master/internship-report-alexandregbaguidiaisse.pdf}
+}
+
+@techreport{techreport.lrde.17,
+  author      = {Gbaguidi A\"isse Alexandre},
+  title       = {A co-B\"uching Toolbox},
+  titre       = {Un ensemble d'outils de conversion en automate de
+                  co-B\"uchi},
+  institution = {EPITA Research and Development Laboratory (LRDE)},
+  year        = 2017,
+  number      = 1705,
+  abstract    = {Thanks to the HOA format there are less and less barriers
+                  between $\omega$-automata with different acceptance
+                  conditions. Spot, a library for $\omega$-automata
+                  manipulation, supports arbitrary acceptance condition and
+                  performs some conversions between them. We augmented the
+                  set of supported acceptance conversions with new algorithms
+                  that convert (when possible) all common classes of non
+                  deterministic $\omega$-automata to deterministic
+                  co-B\"uchi. Boker and Kupferman solved this conversion
+                  whith asymptotically tight constructions. We implement
+                  their methods with some optimizations and adjustments: we
+                  made it work with Streett-like acceptance, any acceptance
+                  in disjunctive normal form (including Rabin-like) and also
+                  transition-based acceptance. Using these conversions gives
+                  a new way to check whether an LTL formula is a persistence
+                  formula.},
+  resume      = {Gr\^ace au format HOA, il y a de moins en moins de
+                  barri\`eres entre des $\omega$-automates avec diff\'erentes
+                  conditions d'acceptation. Spot, une biblioth\`eque
+                  manipulant les $\omega$-automates supporte des conditions
+                  d'acceptations arbitraires et propose d\'ej\`a quelques
+                  conversions entre elles. Nous rajoutons de nouveaux
+                  algorithmes de conversions capables de convertir (quand
+                  c'est possible) n'importe quelle condition d'acceptation
+                  classique vers du co-B\"uchi d\'eterministe. Boker and
+                  Kupferman ont mis au point des m\'ethodes asymptotiquement
+                  optimales r\'ealisant ces conversions. Nous avons
+                  impl\'ement\'e leurs m\'ethodes avec quelques optimisations
+                  et adaptations: nous supportons les conditions
+                  d'acceptations dites "Streett-like", celles \'ecrites sous
+                  forme normale disjonctive (y compris celles dites
+                  "Rabin-like") ainsi que les acceptations bas\'ees sur les
+                  transitions ("transition-based"). Ces algorithmes peuvent
+                  \^etre utilis\'es pour v\'erifier si une formule LTL est de
+                  la famille "persistence". },
+  resumecourt = {Spot supporte des conditions d'acceptation arbitraires et
+                  propose d\'ej\`a quelques conversions entre elles. Nous
+                  rajoutons de nouveaux algorithmes de conversion capables de
+                  convertir (quand c'est possible) n'importe quel automate
+                  avec une condition d'acceptation classique vers du
+                  co-B\"uchi d\'eterministe. Nous pr\'esenterons ces
+                  algorithmes mis au point par Boker et Kupferman en
+                  explicitant les am\'eliorations apport\'ees durant leur
+                  impl\'ementation.},
+  url         = {https://github.com/shumpaga/techreports/blob/master/A%20co-B%C3%BCching%20Toolbox.pdf}
+}
+
+@inproceedings{baarir.15.lpar,
+  author    = {Souheib Baarir and Alexandre Duret-Lutz},
+  booktitle = {Proceedings of the 20th International Conference on Logic
+		  for Programming, Artificial Intelligence, and Reasoning
+		  (LPAR-20)},
+  title     = {{SAT}-based Minimization of Deterministic
+		  $\omega$-Automata},
+  year      = {2015},
+  month     = nov,
+  pages     = {79--87},
+  publisher = {Springer},
+  volume    = {9450},
+  series    = {Lecture Notes in Computer Science},
+  abstract  = {We describe a tool that inputs a deterministic
+		  $\omega$-automaton with any acceptance condition, and
+		  synthesizes an equivalent $\omega$-automaton with another
+		  arbitrary acceptance condition and a given number of
+		  states, if such an automaton exists. This tool, that relies
+		  on a SAT-based encoding of the problem, can be used to
+		  provide minimal $\omega$-automata equivalent to given
+		  properties, for different acceptance conditions.},
+  pdf       = {adl/baarir.15.lpar.pdf},
+  doi       = {10.1007/978-3-662-48899-7_6}
+}
+
+@inproceedings{baarir.14.forte,
+  author    = {Souheib Baarir and Alexandre Duret-Lutz},
+  title     = {Mechanizing the Minimization of Deterministic Generalized
+		  {B\"u}chi Automata},
+  booktitle = {Proceedings of the 34th IFIP International Conference on
+		  Formal Techniques for Distributed Objects, Components and
+		  Systems (FORTE'14)},
+  year      = {2014},
+  month     = jun,
+  pages     = {266--283},
+  publisher = {Springer},
+  pdf       = {adl/baarir.14.forte.pdf},
+  slides    = {adl/baarir.14.forte.slides.pdf},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {8461},
+  abstract  = {Deterministic B{\"u}chi automata (DBA) are useful to
+		  (probabilistic) model checking and synthesis. We survey
+		  techniques used to obtain and minimize DBAs for different
+		  classes of properties. We extend these techniques to
+		  support DBA that have generalized and transition-based
+		  acceptance (DTGBA) as they can be even smaller. Our
+		  minimization technique---a reduction to a SAT
+		  problem---synthesizes a DTGBA equivalent to the input DTGBA
+		  for any given number of states and number of acceptance
+		  sets (assuming such automaton exists). We present
+		  benchmarks using a framework that implements all these
+		  techniques.},
+  doi       = {10.1007/978-3-662-43613-4_17}
+}
